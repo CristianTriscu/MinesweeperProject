@@ -3,14 +3,16 @@
 *,
 *:before,
 *:after {
+  font: 20 px "Georgia",Futura, sans-serif;
   box-sizing: border-box;
-  box-shadow: darken($color: #6b4444, $amount: 100);
+  box-shadow: darken($color:  #2A255C, $amount: 100);
 }
 body {
+  font: 20 px "Georgia",Futura, sans-serif;
   margin: 20px;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(0deg, #d9cfe0, #e7e1ee, #d9cfe0);}
+  background: #00334e;}
   
 .clear {
   clear: both;
@@ -18,10 +20,10 @@ body {
 }
 
 .game {
+  font: 20 px "Georgia",Futura, sans-serif;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background: rgb(121, 19, 116);
   margin-top: 15vh;
   
 
@@ -47,11 +49,13 @@ body {
   }
 
   .board {
+    font-family: Georgia;
+    font-size: 18pt;
   }
 
   .cell {
-    background: #FCFAF9;
-    border: 1px solid rgb(141, 7, 96);;
+    background: #e8e8e8;
+    border: 1px solid #145374;;
     border-radius: 4px;
     float: left;
     line-height: 45px;
@@ -68,7 +72,7 @@ body {
   }
 
   .hidden {
-    background: #fae77d;
+    background: #5588a3;
   }
 
   .is-flag,

@@ -13,7 +13,7 @@ class Cell extends React.Component {
     const {value} = this.props;
     
     if (!value.isRevealed) {
-      return this.props.value.isFlagged ? "🏴‍" : null;
+      return this.props.value.isFlagged ? "🏳️" : null;
     }
     if (value.isMine) {
       return "💣";
@@ -346,6 +346,7 @@ class Board extends React.Component {
                 this.setState({mineCount: 0, gameStatus: "You Win."});
                 this.revealBoard();
                 alert("You Win");
+                clearInterval(this.state.interval);
             }
         }
 
@@ -414,25 +415,36 @@ Cell.propTypes = {
   value: PropTypes.func
 }
 
-export default Game
 
-//functie helper pt winner tic-tac-toe
-/*function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+var sendScoreToAPI = () => {
+    //get player name from browser prompt
+    var playerName = prompt("HELLO! Introduceti numele, te rog! Have fuuuun ^.^ ");
+    if (playerName != null) {
+      var dataToSave = {
+        playerScore: 10, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
+        playerName: playerName,
+        currentTime: new Date()
+      };
+      // Actual API call
+      fetch(
+        "https://api.example.com/minesweeper", // replace with the url to your API
+        {method: 'POST', body: JSON.stringify(dataToSave)}
+        )
+        .then(res => res.json())
+        .then(
+          (result) => {
+            alert('You saved your score');
+          },
+          // Note: it's important to handle errors here
+          (error) => {
+            alert('Bad API call');
+            console.log(error);
+          }
+        )
     }
   }
-  return null;
-}*/
+
+//call API when the player wins a game, move this where it's needed
+sendScoreToAPI();
+
+  export default Game
