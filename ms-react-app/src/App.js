@@ -4,35 +4,7 @@ import PropTypes from 'react'
 import './App.scss';
 
 
-//exemplu de componenta timer
-class Timer extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      count:0
-    }
-  }
-  
-  render(){
-    const {count}=this.state
-    return (
-      <div><h1>{count}</h1></div>
-    )
-  }
-  //setInterval
-  componentDidMount(){
-      this.myInterval=setInterval(()=>{
-        this.setState({
-          count:this.state.count+1
-        })
-      },1000)
-      
-    
-    
-  }
-  stop(){this.setState.count=0}
-}
-//export default Timer
+
 
 
 // Cell Class
@@ -79,23 +51,27 @@ class Board extends React.Component {
         gameStatus: "Game in progress",
         mineCount: this.props.mines,
         time: 0,
+        hasStarted:false,
+        myInterval:0,
     };
 
     tick=()=>{
       if (this.state.gameStatus==="Game in progress"){
-      /*let time=this.state.time+1;
-      this.setState({time})*/
+      
 
-      this.myInterval=setInterval(()=>{
+      this.setState({myInterval:setInterval(()=>{
         this.setState({
           time:this.state.time+1
         })
-      },1000)
+      },1000)})
+     
 
 
 
     }
     }
+
+
 
     
 
@@ -299,6 +275,11 @@ class Board extends React.Component {
 
     _handleCellClick(x, y) {
 
+        if(this.state.hasStarted===false)
+        {
+            this.setState({hasStarted:true})
+            this.tick()
+        }
         // check if revealed. return if true.
         if (this.state.boardData[x][y].isRevealed || this.state.boardData[x][y].isFlagged)
         
@@ -308,7 +289,8 @@ class Board extends React.Component {
         if (this.state.boardData[x][y].isMine) {
             this.setState({gameStatus: "You Lost."});
             this.revealBoard();
-            this.state.time=-100
+            clearInterval(this.state.myInterval)
+            
             //oprim timerul 
             //alert("game over");
         }
@@ -318,7 +300,7 @@ class Board extends React.Component {
         updatedData[x][y].isRevealed = true;
 
         if (updatedData[x][y].isEmpty) {
-         this.tick();
+         
             
             updatedData = this.revealEmpty(x, y, updatedData);
         }
@@ -328,6 +310,7 @@ class Board extends React.Component {
             this.revealBoard();
             if(this.gameStatus ==="You Win"){
             alert("You Win");
+            clearInterval(this.state.myInterval)
             
           }
             //oprim timerul
