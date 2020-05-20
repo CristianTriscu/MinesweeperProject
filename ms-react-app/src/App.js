@@ -308,12 +308,13 @@ class Board extends React.Component {
         if (this.getHidden(updatedData).length === this.props.mines) {
             this.setState({mineCount: 0, gameStatus: "You Win."});
             this.revealBoard();
-            if(this.gameStatus ==="You Win"){
-            alert("You Win");
+            
+                
+                
             clearInterval(this.state.myInterval)
             
-          }
-            //oprim timerul
+          
+            
         }
 
         this.setState({
