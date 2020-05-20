@@ -4,6 +4,7 @@ import './index.css';
 import Game from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 ReactDOM.render(
  <Game/>,
   document.getElementById('root')
