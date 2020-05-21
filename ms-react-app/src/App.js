@@ -423,7 +423,7 @@ var sendScoreToAPI = () => {
     var playerName = prompt("HELLO! Introduceti numele, va rog! Have fuuuun ^.^ ");
     if (playerName != null) {
       var dataToSave = {
-        playerScore: this.Game.time, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
+        playerScore: 100, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
         playerName: playerName,
         currentTime: new Date()
       };
