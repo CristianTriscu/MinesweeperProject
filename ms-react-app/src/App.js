@@ -291,6 +291,7 @@ class Board extends React.Component {
             this.revealBoard();
             clearInterval(this.state.myInterval)
             
+            sendScoreToAPI();
             //oprim timerul 
             //alert("game over");
         }
@@ -314,7 +315,7 @@ class Board extends React.Component {
             clearInterval(this.state.myInterval)
             
           
-            
+            sendScoreToAPI();
         }
 
         this.setState({
@@ -347,6 +348,7 @@ class Board extends React.Component {
                 this.revealBoard();
                 alert("You Win");
                 clearInterval(this.state.interval);
+                //sendScoreToAPI();
             }
         }
 
@@ -418,10 +420,10 @@ Cell.propTypes = {
 
 var sendScoreToAPI = () => {
     //get player name from browser prompt
-    var playerName = prompt("HELLO! Introduceti numele, te rog! Have fuuuun ^.^ ");
+    var playerName = prompt("HELLO! Introduceti numele, va rog! Have fuuuun ^.^ ");
     if (playerName != null) {
       var dataToSave = {
-        playerScore: 10, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
+        playerScore: this.Game.time, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
         playerName: playerName,
         currentTime: new Date()
       };
@@ -445,6 +447,6 @@ var sendScoreToAPI = () => {
   }
 
 //call API when the player wins a game, move this where it's needed
-sendScoreToAPI();
+//sendScoreToAPI();
 
   export default Game
