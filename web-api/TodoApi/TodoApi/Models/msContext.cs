@@ -9,11 +9,11 @@ namespace TodoApi.Models
 {
     public class msContext : DbContext
     {
-        public msContext(DbContextOptions<TodoContext> options)
+        public msContext(DbContextOptions<msContext> options)
             : base(options)
         {
         }
        
-        public DbSet<ms> msItems { get; set; }
+        public DbSet<ms> MsItems { get; set; }
     }
 }

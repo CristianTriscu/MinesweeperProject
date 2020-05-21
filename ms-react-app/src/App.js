@@ -289,10 +289,11 @@ class Board extends React.Component {
         if (this.state.boardData[x][y].isMine) {
             this.setState({gameStatus: "You Lost."});
             this.revealBoard();
+            //oprim timerul 
             clearInterval(this.state.myInterval)
             
             sendScoreToAPI();
-            //oprim timerul 
+            
             //alert("game over");
         }
 
@@ -346,9 +347,9 @@ class Board extends React.Component {
             if (JSON.stringify(mineArray) === JSON.stringify(FlagArray)) {
                 this.setState({mineCount: 0, gameStatus: "You Win."});
                 this.revealBoard();
-                alert("You Win");
+                //alert("You Win");
                 clearInterval(this.state.interval);
-                //sendScoreToAPI();
+                sendScoreToAPI();
             }
         }
 
@@ -420,19 +421,25 @@ Cell.propTypes = {
 
 var sendScoreToAPI = () => {
     //get player name from browser prompt
-    var playerName = prompt("HELLO! Introduceti numele, va rog! Have fuuuun ^.^ ");
+    //var playerName = prompt("HELLO! Introduceti numele, va rog! Have fuuuun ^.^ ");
+    var playerName="test"
     if (playerName != null) {
       var dataToSave = {
-        playerScore: 100, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
-        playerName: playerName,
-        currentTime: new Date()
+         
+        name: playerName,
+        time: 100,//replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
+        //currentTime: new Date()
       };
       // Actual API call
-      fetch(
-        "https://api.example.com/minesweeper", // replace with the url to your API
-        {method: 'POST', body: JSON.stringify(dataToSave)}
+      /*fetch(
+        "https://localhost:44368/api/ms", // replace with the url to your API
+        {method: 'POST', body:JSON.stringify(dataToSave), mode: 'no-cors',
+         headers:{'Content-Type': 'application/json'}
+        
+        }
+        
         )
-        .then(res => res.json())
+        //.then(res => res.json())
         .then(
           (result) => {
             alert('You saved your score');
@@ -443,10 +450,39 @@ var sendScoreToAPI = () => {
             console.log(error);
           }
         )
+        */
+       async function postData(url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'no-cors', // no-cors, *cors, same-origin
+          //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          //credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            'Accept': 'application/json, text/plain',
+            'Content-Type': 'application/json;charset=UTF-8'
+            },
+
+         // redirect: 'follow', // manual, *follow, error
+         // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+      
+      postData('https://localhost:44368/api/ms', { name:"test",time:1000 })
+        .then(data => {
+          console.log(data); // JSON data parsed by `response.json()` call
+        });
+
+
+
+
     }
+    
   }
 
-//call API when the player wins a game, move this where it's needed
-//sendScoreToAPI();
+
+
 
   export default Game

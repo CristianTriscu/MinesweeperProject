@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
+using TodoApi.Models;
 
 namespace TodoApi.Models
 {
@@ -15,5 +16,7 @@ namespace TodoApi.Models
         }
 
         public DbSet<TodoItem> TodoItems { get; set; }
+
+        public DbSet<TodoApi.Models.ms> ms { get; set; }
     }
 }
