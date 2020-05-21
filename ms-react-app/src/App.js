@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'react'
+import ReactDOM from 'react-dom';
+import './App.css';
 
-import './App.scss';
 
 
 
@@ -392,6 +392,49 @@ class Board extends React.Component {
             </div>
         );
     }
+}
+
+
+
+render()
+    {
+    return (
+        <div className="board">
+          <div className="game">
+            <div className="game-info">
+                <span className="info">Remaining mines: {this.state.mineCount}</span><br />
+                <span className="info">Timer: {this.state.time}</span><br />
+                <span className="info">{this.state.gameWon ? "You win! 🎉" : ""}</span>
+            </div>
+            </div>
+            <div className="board-container">
+            {
+                this.renderBoard(this.state.boardData)
+            }
+            <Leaderboard /></div>
+        </div>
+    );
+}
+
+
+
+
+class Leaderboard extends React.Component{
+    
+    render(){
+       return( <div className="leaderboard">
+           <div className="leaderboard-container">
+            <div className="leaderboard-title">
+                <span>Leaderboard</span>
+            </div>
+            <div className="leaderboard-content">
+                <div className="leaderboard-player">                  </div>
+                <div className="leaderboard-player">
+                </div>
+            </div>
+            </div>
+        </div>
+       )}
 }
 
 // Game Class
