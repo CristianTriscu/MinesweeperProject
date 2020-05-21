@@ -32,19 +32,46 @@ namespace TodoApi
             services.AddDbContext<msContext>(opt =>
                opt.UseInMemoryDatabase("msList"));
             services.AddControllers();
+            
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRouting();
+
+
+           
+            app.UseCors("MyPolicy");
+
+
+
+            //app.UseCors(builder => builder
+            //.AllowAnyOrigin()
+            // .AllowAnyMethod()
+            //.AllowAnyHeader()
+            // .AllowCredentials());
+
+
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
-            app.UseRouting();
+            
+
+           
 
             app.UseAuthorization();
 

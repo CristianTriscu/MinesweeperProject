@@ -284,7 +284,6 @@ C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\bin\D
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.csprojAssemblyReference.cache
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.AssemblyInfoInputs.cache
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.AssemblyInfo.cs
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.csproj.CoreCompileInputs.cache
@@ -296,3 +295,4 @@ C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\D
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.dll
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.pdb
 C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.genruntimeconfig.cache
+C:\Users\Cristian\Desktop\ms_v2\MinesweeperProject\web-api\TodoApi\TodoApi\obj\Debug\netcoreapp3.1\TodoApi.csprojAssemblyReference.cache

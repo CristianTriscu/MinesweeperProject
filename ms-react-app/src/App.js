@@ -292,7 +292,7 @@ class Board extends React.Component {
             //oprim timerul 
             clearInterval(this.state.myInterval)
             
-            sendScoreToAPI();
+            sendScoreToAPI(this.state.time);
             
             //alert("game over");
         }
@@ -419,27 +419,27 @@ Cell.propTypes = {
 }
 
 
-var sendScoreToAPI = () => {
+var sendScoreToAPI = (time) => {
     //get player name from browser prompt
-    //var playerName = prompt("HELLO! Introduceti numele, va rog! Have fuuuun ^.^ ");
-    var playerName="test"
+    var playerName = prompt("Congrats for winning the game! Please enter your name: ", "yourUsername");
     if (playerName != null) {
       var dataToSave = {
-         
+        time: time, //replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
         name: playerName,
-        time: 100,//replace 10 with your actual variable (probably this.state.gameScore or this.state.time)
-        //currentTime: new Date()
+       // currentTime: new Date()
       };
       // Actual API call
-      /*fetch(
-        "https://localhost:44368/api/ms", // replace with the url to your API
-        {method: 'POST', body:JSON.stringify(dataToSave), mode: 'no-cors',
-         headers:{'Content-Type': 'application/json'}
-        
+      fetch(
+        "http://localhost:1601/api/ms", // replace with the url to your API
+        {
+          method: 'POST', 
+          headers: {
+             'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataToSave)
         }
-        
         )
-        //.then(res => res.json())
+        .then(res => res.json())
         .then(
           (result) => {
             alert('You saved your score');
@@ -450,8 +450,10 @@ var sendScoreToAPI = () => {
             console.log(error);
           }
         )
-        */
-       async function postData(url = '', data = {}) {
+    }
+  }
+        
+       /*async function postData(url = '', data = {}) {
         // Default options are marked with *
         const response = await fetch(url, {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -473,14 +475,14 @@ var sendScoreToAPI = () => {
       postData('https://localhost:44368/api/ms', { name:"test",time:1000 })
         .then(data => {
           console.log(data); // JSON data parsed by `response.json()` call
-        });
+        });*/
 
 
 
 
-    }
     
-  }
+
+  
 
 
 
