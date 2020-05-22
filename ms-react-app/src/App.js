@@ -1,11 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
+import PropTypes from 'react'
+
+import './App.scss';
 
 
-
-
-
+class Leaderboard extends React.Component{
+    
+    render(){
+       return( <div className="leaderboard">
+           <div className="leaderboard-container">
+            <div className="leaderboard-title">
+                <span>Leaderboard</span>
+            </div>
+            <div className="leaderboard-content">
+                <div className="leaderboard-player">
+                   <span>Cristi : 60</span>
+                  
+                </div>
+                <div className="leaderboard-player">
+                   <span>Iulia : 90</span>
+                   
+                </div>
+                <div className="leaderboard-player">
+                   <span>Ioana: 102</span>
+                   
+                </div>
+            </div>
+            </div>
+        </div>
+       )}
+}
 
 // Cell Class
 class Cell extends React.Component {
@@ -378,6 +402,8 @@ class Board extends React.Component {
 
    
 
+
+
   render() {
         return (
             <div className="board">
@@ -389,52 +415,17 @@ class Board extends React.Component {
                 {
                     this.renderBoard(this.state.boardData)
                 }
+                  
+                    <Leaderboard/>
+                
+               
+               
+                
             </div>
+
+            
         );
     }
-}
-
-
-
-render()
-    {
-    return (
-        <div className="board">
-          <div className="game">
-            <div className="game-info">
-                <span className="info">Remaining mines: {this.state.mineCount}</span><br />
-                <span className="info">Timer: {this.state.time}</span><br />
-                <span className="info">{this.state.gameWon ? "You win! 🎉" : ""}</span>
-            </div>
-            </div>
-            <div className="board-container">
-            {
-                this.renderBoard(this.state.boardData)
-            }
-            <Leaderboard /></div>
-        </div>
-    );
-}
-
-
-
-
-class Leaderboard extends React.Component{
-    
-    render(){
-       return( <div className="leaderboard">
-           <div className="leaderboard-container">
-            <div className="leaderboard-title">
-                <span>Leaderboard</span>
-            </div>
-            <div className="leaderboard-content">
-                <div className="leaderboard-player">                  </div>
-                <div className="leaderboard-player">
-                </div>
-            </div>
-            </div>
-        </div>
-       )}
 }
 
 // Game Class
