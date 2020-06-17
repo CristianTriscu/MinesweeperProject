@@ -316,7 +316,7 @@ class Board extends React.Component {
             //oprim timerul 
             clearInterval(this.state.myInterval)
             
-            sendScoreToAPI(this.state.time);
+            //sendScoreToAPI(this.state.time);
             
             //alert("game over");
         }
@@ -433,7 +433,7 @@ class Game extends React.Component {
   state = {
     height: 8,
     width: 8,
-    mines: 10,
+    mines: 1,
     
   };
 
