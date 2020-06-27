@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/MinesweeperProject/ms-react-app/static/css/main.38a4ad8a.chunk.css",
-    "main.js": "/MinesweeperProject/ms-react-app/static/js/main.6262163e.chunk.js",
-    "main.js.map": "/MinesweeperProject/ms-react-app/static/js/main.6262163e.chunk.js.map",
-    "runtime-main.js": "/MinesweeperProject/ms-react-app/static/js/runtime-main.d36f3263.js",
-    "runtime-main.js.map": "/MinesweeperProject/ms-react-app/static/js/runtime-main.d36f3263.js.map",
-    "static/js/2.0cace0ef.chunk.js": "/MinesweeperProject/ms-react-app/static/js/2.0cace0ef.chunk.js",
-    "static/js/2.0cace0ef.chunk.js.map": "/MinesweeperProject/ms-react-app/static/js/2.0cace0ef.chunk.js.map",
-    "index.html": "/MinesweeperProject/ms-react-app/index.html",
-    "precache-manifest.67b2f04072fefa2be0e998c1b3a916e1.js": "/MinesweeperProject/ms-react-app/precache-manifest.67b2f04072fefa2be0e998c1b3a916e1.js",
-    "service-worker.js": "/MinesweeperProject/ms-react-app/service-worker.js",
-    "static/css/main.38a4ad8a.chunk.css.map": "/MinesweeperProject/ms-react-app/static/css/main.38a4ad8a.chunk.css.map",
-    "static/js/2.0cace0ef.chunk.js.LICENSE.txt": "/MinesweeperProject/ms-react-app/static/js/2.0cace0ef.chunk.js.LICENSE.txt"
+    "main.css": "/MinesweeperProject/static/css/main.38a4ad8a.chunk.css",
+    "main.js": "/MinesweeperProject/static/js/main.51081f48.chunk.js",
+    "main.js.map": "/MinesweeperProject/static/js/main.51081f48.chunk.js.map",
+    "runtime-main.js": "/MinesweeperProject/static/js/runtime-main.87e6feef.js",
+    "runtime-main.js.map": "/MinesweeperProject/static/js/runtime-main.87e6feef.js.map",
+    "static/js/2.0cace0ef.chunk.js": "/MinesweeperProject/static/js/2.0cace0ef.chunk.js",
+    "static/js/2.0cace0ef.chunk.js.map": "/MinesweeperProject/static/js/2.0cace0ef.chunk.js.map",
+    "index.html": "/MinesweeperProject/index.html",
+    "precache-manifest.3e32a2ac8ac4affaaf9a28018839d17e.js": "/MinesweeperProject/precache-manifest.3e32a2ac8ac4affaaf9a28018839d17e.js",
+    "service-worker.js": "/MinesweeperProject/service-worker.js",
+    "static/css/main.38a4ad8a.chunk.css.map": "/MinesweeperProject/static/css/main.38a4ad8a.chunk.css.map",
+    "static/js/2.0cace0ef.chunk.js.LICENSE.txt": "/MinesweeperProject/static/js/2.0cace0ef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d36f3263.js",
+    "static/js/runtime-main.87e6feef.js",
     "static/js/2.0cace0ef.chunk.js",
     "static/css/main.38a4ad8a.chunk.css",
-    "static/js/main.6262163e.chunk.js"
+    "static/js/main.51081f48.chunk.js"
   ]
 }
