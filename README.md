@@ -1,4 +1,4 @@
-# MinesweeperProject made during the 2-nd year of faculty.
+# MinesweeperProject made during the speciality practice period in the 2-nd year of faculty.
 
 Acces the front-end via the link below:
 
